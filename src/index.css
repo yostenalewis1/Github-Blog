@@ -7,10 +7,16 @@ body {
    
 }
 
-.container {
+.app{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.header {
   width: 1440px;
-height: 296px;
-flex-shrink: 0;
+  height: 296px;
+  flex-shrink: 0;
   background: var(--base-profile, #0B1B2B);
   position: relative;
   margin: auto;
@@ -45,7 +51,7 @@ flex-shrink: 0;
 .logopic
 {
   width: 45px;
-height: 40px;
+  height: 40px;
 }
 
 
@@ -68,11 +74,11 @@ line-height: 160%;
   flex-shrink: 0;
   background: var(--base-profile, #0B1B2B);
   box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.20); 
-/*  margin: auto; */
   display: flex;
- position: absolute;
-     left: 350px;
-     top: 200px; 
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
 }
 
 .profilepic
@@ -96,8 +102,8 @@ right: 32px;
 }
 
 .textinfo{
-width: 612px;
-height: 52px;
+  width: 612px;
+  height: 52px;
   color: var(--base-text, #AFC2D4);
   font-family:'Nunito' ;
   font-size: 16px;
@@ -105,23 +111,22 @@ height: 52px;
   font-weight: 400;
   line-height: 160%; /* 25.6px */
   position: relative;
-padding-top: 10px;
+  padding-top: 10px;
   right: 32px;
-      }
+}
 
-.contact
-{
-display: flex;
-flex-direction: row;
-position: relative;
-padding-top: 2px;
-right: 45px;
-color: var(--base-subtitle, #C4D4E3);
-font-family:'Nunito';
-font-size: 16px;
-font-style: normal;
-font-weight: 400;
-line-height: 160%;
+.contact{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  padding-top: 2px;
+  right: 45px;
+  color: var(--base-subtitle, #C4D4E3);
+  font-family:'Nunito';
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%;
 }
 
 .cameronwll{
@@ -147,22 +152,22 @@ right:0;
 
 .Github
 {
-display: flex;
-flex-direction: row;
-color: var(--brand-blue, #3294F8);
-font-size: 15px;
-font-style: normal;
-font-weight: 700;
-line-height: 160%;  
-position: relative;
-top: 30px;
-right: 100px ;
-text-decoration: none;
+  display: flex;
+  flex-direction: row;
+  color: var(--brand-blue, #3294F8);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 160%;  
+  position: relative;
+  top: 30px;
+  right: 120px;
+  text-decoration: none;
 
 }
 
 .giticon
 {
-width: 12px;
-height: 12px; 
+  width: 12px;
+  height: 12px; 
 }

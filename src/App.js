@@ -7,7 +7,7 @@ import iconrock from "./images/Icon Rocketseat.svg";
 import iconcame from "./images/Icon cameronwll.svg";
 export default function App() {
   return (
-    <div>
+    <div className="app">
       <Header />
       <Profile />
     </div>
@@ -16,7 +16,7 @@ export default function App() {
 
 function Header() {
   return (
-    <div className="container">
+    <div className="header">
       <img src={rectangle} alt="rec" className="rectangle" />
       <img src={rectangle} alt="rec" className="rectangle1" />
 
