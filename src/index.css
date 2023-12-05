@@ -58,3 +58,111 @@ font-style: normal;
 font-weight: 400;
 line-height: 160%;  
 }
+
+.profile
+{
+  width: 864px;
+  margin: auto;
+  height: 212px;
+  border-radius: 10px;
+  flex-shrink: 0;
+  background: var(--base-profile, #0B1B2B);
+  box-shadow: 0px 2px 28px 0px rgba(0, 0, 0, 0.20); 
+/*  margin: auto; */
+  display: flex;
+ position: absolute;
+     left: 350px;
+     top: 200px; 
+}
+
+.profilepic
+{
+  border-radius: 8px;
+  padding: 32px 76px 32px 40px;
+
+}
+
+.name
+    {
+color: var(--base-title, #E7EDF4);
+font-family:'Nunito' ;
+font-size: 24px;
+font-style: normal;
+font-weight: 700;
+line-height: 130%; 
+position: relative;
+top: 20px;
+right: 32px;
+}
+
+.textinfo{
+width: 612px;
+height: 52px;
+  color: var(--base-text, #AFC2D4);
+  font-family:'Nunito' ;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 160%; /* 25.6px */
+  position: relative;
+padding-top: 10px;
+  right: 32px;
+      }
+
+.contact
+{
+display: flex;
+flex-direction: row;
+position: relative;
+padding-top: 2px;
+right: 45px;
+color: var(--base-subtitle, #C4D4E3);
+font-family:'Nunito';
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 160%;
+}
+
+.cameronwll{
+padding: 10px 20px;
+}
+.rocketseat
+{
+padding: 10px 20px;
+}
+.seguidores
+{
+padding: 10px 3%;
+}
+
+
+.icongit
+{
+width: 12px;
+height: 12px; 
+position: absolute;
+right:0;
+}
+
+.Github
+{
+display: flex;
+flex-direction: row;
+color: var(--brand-blue, #3294F8);
+font-size: 15px;
+font-style: normal;
+font-weight: 700;
+line-height: 160%;  
+position: relative;
+top: 30px;
+right: 100px ;
+text-decoration: none;
+
+}
+
+.giticon
+{
+width: 12px;
+height: 12px; 
+}
