@@ -4,6 +4,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  
 }
 
 .app{
@@ -219,4 +220,58 @@ right:0;
   font-weight: 400;
   }
    
- 
+      
+      .items
+      {
+        width: 435px;
+        height: 260px;
+        flex-shrink: 0;
+      border-radius: 10px;
+      background: var(--base-post, #112131);  
+      
+      }
+      .infolist{ 
+        position: absolute;
+        left: 50%;
+        top:40%;
+        transform: translate(-50%, 50%);
+        display: grid ;
+        grid-template-columns:1fr 1fr;     
+        grid-template-rows: 1fr 1fr 1fr ; 
+         gap: 32px;
+       
+      }
+
+
+      .title
+      {
+        width: 283px;
+      color: var(--base-title, #E7EDF4);
+    font-family: 'Nunito';
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 160%;  
+    margin: 32px 101px 9px 32px;
+    
+      }
+
+      .texttitle
+      { 
+         
+      width: 352px;
+        height: 160px;
+        flex-shrink: 0;
+        overflow: hidden;
+    color: var(--base-text, #AFC2D4);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  font-family: 'Nunito';
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%; 
+    margin: 20px 64px 3px 32px;
+      }
+
+
