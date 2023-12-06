@@ -5,11 +5,13 @@ import icongit from "./images/Icon GIT.svg";
 import icon32seg from "./images/Icon 32 seguidores.svg";
 import iconrock from "./images/Icon Rocketseat.svg";
 import iconcame from "./images/Icon cameronwll.svg";
+
 export default function App() {
   return (
     <div className="app">
       <Header />
       <Profile />
+      <Input />
     </div>
   );
 }
@@ -19,7 +21,6 @@ function Header() {
     <div className="header">
       <img src={rectangle} alt="rec" className="rectangle" />
       <img src={rectangle} alt="rec" className="rectangle1" />
-
       <div className="Logo">
         <img src={logo} alt="logo" className="logopic" />
         <div className="text">GITHUB BLOG</div>
@@ -63,6 +64,23 @@ function Profile() {
           GITHUB <img src={icongit} alt="icongit" className="giticon" />{" "}
         </pre>
       </a>
+    </div>
+  );
+}
+
+function Input() {
+  return (
+    <div className="input">
+      <div className="wordinput">
+        <p>Publicações </p>
+        <p className="publicações">6 publicações</p>
+      </div>
+      <input
+        type="text"
+        placeholder="Buscar conteúdo"
+        className="inputtext"
+        disabled
+      />
     </div>
   );
 }
