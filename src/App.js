@@ -76,15 +76,15 @@ function Profile() {
         <div className="contact">
           <div className="cameronwll">
             <img src={iconcame} alt="cameronwll" />
-            <lable> cameronwll</lable>
+            <span> cameronwll</span>
           </div>
           <div className="rocketseat">
             <img src={iconrock} alt="imgrock" />
-            <label> Rocketseat</label>
+            <span> Rocketseat</span>
           </div>
           <div className="seguidores">
             <img src={icon32seg} alt="32seguidores" />
-            <label> 32 seguidores</label>
+            <span> 32 seguidores</span>
           </div>
         </div>
       </div>
@@ -98,7 +98,6 @@ function Profile() {
     </div>
   );
 }
-
 function Input() {
   return (
     <div className="input">
@@ -122,8 +121,8 @@ function InfoList({data})
   return(
     <div className="infolist">
       {
-        data.map(el=>
-          <AccordianItems title={el.title} text={el.text} key={Date.now}/>
+        data.map((el,i)=>
+          <AccordianItems title={el.title} text={el.text} key={Number(i+1)}/>
           )
       }
     </div>
