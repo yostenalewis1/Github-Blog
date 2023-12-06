@@ -225,10 +225,9 @@ right:0;
       {
         width: 435px;
         height: 260px;
-        flex-shrink: 0;
-      border-radius: 10px;
-      background: var(--base-post, #112131);  
-      
+        border-radius: 10px;
+        background: var(--base-post, #112131);  
+        padding: 5px 10px;
       }
       .infolist{ 
         position: absolute;
@@ -245,33 +244,29 @@ right:0;
 
       .title
       {
-        width: 283px;
-      color: var(--base-title, #E7EDF4);
-    font-family: 'Nunito';
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 160%;  
-    margin: 32px 101px 9px 32px;
+        color: var(--base-title, #E7EDF4);
+      font-family: 'Nunito';
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 160%;  
+      width: 70%;
     
       }
 
       .texttitle
       { 
-         
-      width: 352px;
-        height: 160px;
-        flex-shrink: 0;
-        overflow: hidden;
-    color: var(--base-text, #AFC2D4);
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  font-family: 'Nunito';
-    font-size: 19px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 160%; 
-    margin: 20px 64px 3px 32px;
+        display: -webkit-box; 
+        -webkit-box-orient: vertical; 
+        -webkit-line-clamp: 6; 
+        overflow: hidden; 
+        text-overflow: ellipsis; 
+        color: var(--base-text, #AFC2D4);
+        font-family: 'Nunito';
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 160%;     
       }
 
 
