@@ -164,7 +164,7 @@ right:0;
   top: 30px;
   right: 120px;
   text-decoration: none;
-
+  text-transform: uppercase;
 }
 
 .giticon
@@ -174,7 +174,7 @@ right:0;
 }
  
   
-   input
+  input
   {
       
     display: flex;
@@ -195,7 +195,7 @@ right:0;
     font-weight: 700;
     line-height: 160%;  
     display: flex;
-    flex-direction: row;
+     flex-direction: row;
      gap: 700px;
      position: relative;
      top: 200px;
@@ -222,13 +222,13 @@ right:0;
    
       
       .items
-      {
-        width: 435px;
-        height: 260px;
-        border-radius: 10px;
-        background: var(--base-post, #112131);  
-        padding: 5px 10px;
-      }
+        {
+      width: 435px;
+      height: 260px;
+      border-radius: 10px;
+      background: var(--base-post, #112131);  
+      padding: 5px 10px;
+       }
       .infolist{ 
         position: absolute;
         left: 50%;
@@ -270,3 +270,135 @@ right:0;
       }
 
 
+
+      .selectedTitle
+      {
+      width: 800px;
+      color: var(--base-title, #E7EDF4);
+      font-family: 'Nunito';
+      font-size: 24px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 130%; 
+      padding: 71px 32px 66px 33px;
+      position: absolute;
+      }
+
+      .Voltar
+      {
+        display: flex;
+        flex-direction: row;
+        color: var(--brand-blue, #3294F8);
+        font-size: 13px;
+        font-family: 'Nunito';
+        font-style: normal;
+        font-weight:700;
+        line-height: 160%;  
+        position: relative;
+        top: 29px;
+        margin-left: 32px  ;
+        margin-bottom: 20px;
+        text-decoration: none;
+        display: inline-flex;
+        gap: 8px;
+      }
+     
+    .Voltar:hover 
+     {
+      text-decoration:underline;
+     }
+
+      .voltaricon
+      {
+        width: 12px;
+        height: 12px;
+      }
+       
+
+      .verno
+      {
+        display: flex;
+        flex-direction: row;
+        color: var(--brand-blue, #3294F8);
+        font-size: 15px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 160%;  
+        left: 600px;
+        position: relative;
+        top: 30px;
+        text-decoration: none;
+        text-transform: uppercase;
+      }
+      
+
+      .contact2
+      {  
+      display: flex;
+      flex-direction: row;
+      right:210px;
+      color: var(--base-subtitle, #C4D4E3);
+      font-family:'Nunito';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 0%;
+      position: relative;
+      padding: 150px 0px;
+      }
+
+      .cameronwll2,
+      .rocketseat2,
+      .comentários
+      {
+        padding: 0px 32px;
+      }
+      
+     .iconcame,
+     .iconrocketseat,
+     .iconseguidores
+     {
+       position: relative;
+       padding-right: 2px;
+     }
+     
+
+     .content
+     {
+     display: flex;
+     width: 864px;
+     height: 422px;
+     padding: 40px 32px;
+     flex-direction: column;
+     align-items: center;
+     gap: 24px; 
+     background-color:#071422  /*  #C4D4E3 */;
+     position: absolute;
+     left: 50%;
+     top:60%;
+     transform: translate(-50%, 50%);
+     }
+
+     .selectedText
+     {
+      align-self: stretch;
+      color: var(--base-text, #AFC2D4);
+      font-family: 'Nunito';
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: 160%;  
+     }
+
+     .blue-text {
+      color: blue;
+    }
+    
+    .normal-text {
+      border: 1px solid black;
+    }
+
+    .content
+    {
+      align-self: stretch;
+    }
