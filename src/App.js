@@ -13,7 +13,12 @@ import { useState } from "react";
 const informations = [
   {
     title: "1-JavaScript data types and data structures ",
-    text: "1/Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn Dynamic typingJavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types:let foo = 42; // foo is now a number foo = 'bar'; // foo is now a string foo = true; // foo is now a boolean",
+    semiTitle: "JavaScript data types and data structures",
+    text: "1/ Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in JavaScript and what properties they have. These can be used to build other data structures. Wherever possible, comparisons with other languages are drawn Dynamic typingJavaScript is a loosely typed and dynamic language. Variables in JavaScript are not directly associated with any particular value type, and any variable can be assigned (and re-assigned) values of all types:",
+    code: `let foo = 42; // foo is now a number
+           foo = 'bar'; // foo is now a string
+           foo = true; // foo is now a boolean`,
+
   },
   {
     title: "2-JavaScript data types and data structures ",
@@ -39,47 +44,34 @@ const informations = [
 ];
 
 export default function App() {
-  const [selectedTitle, setselectedtitle] = useState("");
-  const [isProfileOpen, setIsProfileOpen] = useState(true);
-  const [isTitelOpen, setIstTitleOpen] = useState(false);
-  const [isInfoListOpen, setIsInfoListOpen] = useState(true);
-  const [isNewPageOpen,setIsNewPageOpen ] = useState(false);
-  const [selectedText, setSelectedText] = useState("");  
+  const [IsBlogOpen, setIsBlogOpen] = useState(false);
+  const [selectedObject, setSelectedObject] = useState({});
 
   return (
     <div className="app">
-      <Header />
-      {isProfileOpen && <Profile selectedTitle={selectedTitle} />}
-      {isInfoListOpen && <Input />}
+      <Header 
+        IsBlogOpen={IsBlogOpen}
+        selectedObject={selectedObject}
+        setIsBlogOpen={setIsBlogOpen}
+        />
 
-      {isInfoListOpen && (
+      {!IsBlogOpen && <Input />}
+
+      {!IsBlogOpen && (
         <InfoList
           data={informations}
-          dataTitle
-          onselected={selectedTitle}
-          setonselected={setselectedtitle}
-          setIsProfileOpen={setIsProfileOpen}
-          setIstTitleOpen={setIstTitleOpen}
-          setIsInfoListOpen={setIsInfoListOpen}
-          setIsNewPageOpen={setIsNewPageOpen}
-          setSelectedText={setSelectedText}
+          setIsBlogOpen={setIsBlogOpen}
+          setSelectedObject={setSelectedObject}
         />
       )}
 
-      {isTitelOpen && (
-        <NewPage
-          selectedTitle={selectedTitle}
-          isTitelOpen={isTitelOpen}
-          isProfileOpen={isProfileOpen}
-        />
-      )}
-
-    {isNewPageOpen && <Content  selectedText={selectedText} />}
+    {IsBlogOpen && <Content selectedObject={selectedObject}/>}
       
     </div>
   );
 }
-function Header() {
+
+function Header({IsBlogOpen, selectedObject, setIsBlogOpen}) {
   return (
     <div className="header">
       <img src={rectangle} alt="rec" className="rectangle" />
@@ -88,14 +80,15 @@ function Header() {
         <img src={logo} alt="logo" className="logopic" />
         <div className="text">GITHUB BLOG</div>
       </div>
+      { !IsBlogOpen ? <MainNavBar /> : <NewPageNav selectedObject={selectedObject} setIsBlogOpen={setIsBlogOpen} /> }
     </div>
   );
 }
 
-function Profile() {
+function MainNavBar() {
   return (
     <div className="profile">
-      <img src={profileimg} alt="profilepic" className="profilepic" />
+      { <img src={profileimg} alt="profilepic" className="profilepic" /> }
 
       <div className="info">
         <p className="name">Cameron Williamson</p>
@@ -129,6 +122,42 @@ function Profile() {
     </div>
   );
 }
+
+function NewPageNav({ selectedObject, setIsBlogOpen }) {
+  return (
+    <div className="profile">
+      <button className="Voltar" onClick={() => window.location.reload()}>
+        <pre>
+          <img src={icon1} alt="icon1" className="voltaricon" /> VOLTAR
+        </pre>
+      </button>
+
+      <a href="https://www.google.com" target="blank" className="verno">
+        <pre>
+          ver no github <img src={icongit} alt="icongit" className="giticon" />
+        </pre>
+      </a>
+
+      <p className="selectedTitle">{selectedObject.title}</p>
+
+      <div className="contact2">
+        <div className="cameronwll2">
+          <img src={iconcame} alt="cameronwll" className="iconcame" />
+          <span className="textcameronwll">cameronwll</span>
+        </div>
+        <div className="rocketseat2">
+          <img src={icon2} alt="rocketseat" className="iconrocketseat" />
+          <span className="iconrocket"> Há 1 dia</span>
+        </div>
+        <div className="comentários">
+          <img src={icon3} alt="icon3" className="iconseguidores" />
+          <span> 5 comentários</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Input() {
   return (
     <div className="input">
@@ -148,13 +177,8 @@ function Input() {
 
 function InfoList({
   data,
-  onselected,
-  setonselected,
-  setIsProfileOpen,
-  setIstTitleOpen,
-  setIsInfoListOpen,
-  setIsNewPageOpen,
-  setSelectedText
+  setIsBlogOpen,
+  setSelectedObject,
 }) {
   return (
     <div className="infolist">
@@ -162,14 +186,10 @@ function InfoList({
         <AccordianItems
           title={el.title}
           text={el.text}
+          code={el.code}
           key={Number(i + 1)}
-          onselected={onselected}
-          setonselected={setonselected}
-          setIsProfileOpen={setIsProfileOpen}
-          setIstTitleOpen={setIstTitleOpen}
-          setIsInfoListOpen={setIsInfoListOpen}
-          setIsNewPageOpen={setIsNewPageOpen}
-          setSelectedText={setSelectedText}
+          setIsBlogOpen={setIsBlogOpen}
+          setSelectedObject={setSelectedObject}
         />
       ))}
     </div>
@@ -179,20 +199,13 @@ function InfoList({
 function AccordianItems({
   title,
   text,
-  setonselected,
-  setIsProfileOpen,
-  setIstTitleOpen,
-  setIsInfoListOpen,
-  setIsNewPageOpen,
-  setSelectedText,
+  code,
+  setIsBlogOpen,
+  setSelectedObject,
 }) {
   const handleClick = () => {
-    setonselected(title);
-    setIsProfileOpen(false);
-    setIstTitleOpen(true);
-    setIsInfoListOpen(false);
-    setIsNewPageOpen(true)
-    setSelectedText(text)
+    setIsBlogOpen(true);
+    setSelectedObject({ title, text, code });
   };
   return (
     <div className="items" onClick={handleClick}>
@@ -201,45 +214,11 @@ function AccordianItems({
     </div>
   );
 }
-
-function NewPage({ selectedTitle }) {
-  return (
-    <div className="profile">
-      <a href="https://www.google.com" className="Voltar">
-        <pre>
-          <img src={icon1} alt="icon1" className="voltaricon" /> VOLTAR
-        </pre>
-      </a>
-
-      <a href="https://www.google.com" target="blank" className="verno">
-        <pre>
-          ver no github <img src={icongit} alt="icongit" className="giticon" />
-        </pre>
-      </a>
-
-      <p className="selectedTitle">{selectedTitle}</p>
-
-      <div className="contact2">
-        <div className="cameronwll2">
-          <img src={iconcame} alt="cameronwll" className="iconcame" />
-          <span className="textcameronwll">cameronwll</span>
-        </div>
-        <div className="rocketseat2">
-          <img src={icon2} alt="rocketseat" className="iconrocketseat" />
-          <span className="iconrocket"> Há 1 dia</span>
-        </div>
-        <div className="comentários">
-          <img src={icon3} alt="icon3" className="iconseguidores" />
-          <span> 5 comentários</span>
-        </div>
-      </div>
-    </div>
-  );
-}
   
- function Content({selectedText}) {
+ function Content({selectedObject}) {
   return <div className="content">
-   <p className="selectedText">{selectedText}</p> 
+   <p className="selectedText">{selectedObject.text}</p> 
+   <p className="selectedCode">{selectedObject.code}</p>
     </div>;
 }
  

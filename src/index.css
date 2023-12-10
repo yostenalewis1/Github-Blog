@@ -301,6 +301,9 @@ right:0;
         text-decoration: none;
         display: inline-flex;
         gap: 8px;
+        background: transparent;
+        z-index: 2;
+        border: none;
       }
      
     .Voltar:hover 
