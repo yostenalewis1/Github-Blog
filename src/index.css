@@ -99,7 +99,7 @@ font-weight: 700;
 line-height: 130%; 
 position: relative;
 top: 20px;
-right: 32px;
+left: 5%;
 }
 
 .textinfo{
@@ -113,7 +113,7 @@ right: 32px;
   line-height: 160%; /* 25.6px */
   position: relative;
   padding-top: 10px;
-  right: 32px;
+  left: 5%;
 }
 
 .contact{
@@ -128,20 +128,16 @@ right: 32px;
   font-style: normal;
   font-weight: 400;
   line-height: 160%;
+  left: 5%;
 }
 
 .cameronwll{
 padding: 10px 20px;
 }
-.rocketseat
-{
-padding: 10px 20px;
-}
-.seguidores
-{
-padding: 10px 3%;
-}
 
+.cameronwll img{
+  margin-right: 10px;
+}
 
 .icongit
 {

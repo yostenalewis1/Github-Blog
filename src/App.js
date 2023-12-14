@@ -1,6 +1,5 @@
 import logo from "./images/terminal-solid 1.svg";
 import rectangle from "./images/rectangles.svg";
-import profileimg from "./images/avatar.png";
 import icongit from "./images/Icon GIT.svg";
 import icon32seg from "./images/Icon 32 seguidores.svg";
 import iconrock from "./images/Icon Rocketseat.svg";
@@ -8,7 +7,9 @@ import iconcame from "./images/Icon cameronwll.svg";
 import icon1 from "./images/Iconpre.svg";
 import icon2 from "./images/Icon (2).svg";
 import icon3 from "./images/Icon (3).svg";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import axios from "axios";
+
  
 const informations = [
   {
@@ -86,35 +87,52 @@ function Header({IsBlogOpen, selectedObject, setIsBlogOpen}) {
 }
 
 function MainNavBar() {
+
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const userResponse = await axios.get(`https://api.github.com/users/yostenalewis1`);
+        setUserData(userResponse.data);
+
+        const reposResponse = await axios.get(`https://api.github.com/users/yostenalewis1/repos`);
+        console.log('Repos:', reposResponse.data);
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
+
+    fetchUserData();
+  }, []);
+
   return (
     <div className="profile">
-      { <img src={profileimg} alt="profilepic" className="profilepic" /> }
+      {
+        userData && (
+          <img
+            src={userData.avatar_url}
+            alt="Avatar"
+            className="profile-image"
+          />
+        )
+      }
 
       <div className="info">
-        <p className="name">Cameron Williamson</p>
+        <p className="name">Yostina lewis</p>
         <p className="textinfo">
-          Tristique volutpat pulvinar vel massa, pellentesque egestas. Eu
-          viverra massa quam dignissim aenean malesuada suscipit. Nunc, volutpat
-          pulvinar vel mass.
+          Four year student at the Faculty of Computers and Informatics, Suez Canal University. I am a Front-End Developer and I am passionate about learning new technologies and frameworks.
         </p>
 
         <div className="contact">
           <div className="cameronwll">
-            <img src={iconcame} alt="cameronwll" />
-            <span> cameronwll</span>
-          </div>
-          <div className="rocketseat">
-            <img src={iconrock} alt="imgrock" />
-            <span> Rocketseat</span>
-          </div>
-          <div className="seguidores">
-            <img src={icon32seg} alt="32seguidores" />
-            <span> 32 seguidores</span>
+            <img src={iconcame} alt="github" />
+            <span>yostenalewis1</span>
           </div>
         </div>
       </div>
 
-      <a href="https://www.github.com" target="blank" className="Github">
+      <a href="https://github.com/yostenalewis1" target="blank" className="Github">
         <pre>
           GITHUB <img src={icongit} alt="icongit" className="giticon" />
         </pre>
